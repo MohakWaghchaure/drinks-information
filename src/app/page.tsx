@@ -23,9 +23,6 @@ export default function Home() {
       <Header></Header>
       <HeroSection></HeroSection>
       <SearchSection></SearchSection>
-      {/* <div className='' onClick={openModalHander}>Open Modal</div> */}
-      {/* {openModal && <Modal></Modal>}
-      {openModal && <div className='close-modal' onClick={closeModalHander}>Close Modal</div>} */}
     </div>
   );
 }

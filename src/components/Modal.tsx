@@ -21,7 +21,7 @@ const ModalComponent: React.FC<DrinkTypeProps> = ({ drinkTypeData }) => {
                 {drinkTypeData ? (
                         <div className='drink-data'>
                             <div className='title'>{drinkTypeData.strIngredient}</div>
-                            <p><strong>Alcohol Content:</strong> {drinkTypeData.strABV}</p>
+                            <p><strong>Alcohol Content:</strong> {drinkTypeData.strABV ? drinkTypeData.strABV : 'Not found'}</p>
                             <p><strong>Alcoholic:</strong> {drinkTypeData.strAlcohol}</p>
                             <div className='seperate'></div>
                             <p>{drinkTypeData.strDescription}</p>

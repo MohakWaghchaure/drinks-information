@@ -1,22 +1,26 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import arrowIcon from '@/public/icons/right-arrow.png';
 import Image from 'next/image';
 import { Drink } from '@/types/Drink';
+import DrinkCard from './DrinkCard';
+
+interface DrinksArrayData {
+    drinks: Drink[];
+}
 
 const SearchSection = () => {
-    const [drinkName, setDrinkName] = useState('');
-    const [drinksArrayData, setDrinksArrayData] = useState(null);
+    const [drinkName, setDrinkName] = useState<string>('');
+    const [drinksArrayData, setDrinksArrayData] = useState<DrinksArrayData | null>(null);
 
-    const fetchHandler = async (drinkName: String | null) => {
-        
+    const fetchHandler = async (drinkName: string) => {
         try {
             const res = await fetch(
                 `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkName}`
             );
-            const data = await res.json();
+            const data: DrinksArrayData = await res.json();
             setDrinksArrayData(data);
         } catch (error) {
-            console.error('Error fetching ingredient data:', error);
+            console.error('Error fetching drink data:', error);
         }
     };
 
@@ -31,7 +35,8 @@ const SearchSection = () => {
         if (drinksArrayData != null) {
             console.log(drinksArrayData, 'drinksArrayData');
         }
-    }, [drinksArrayData])
+    }, [drinksArrayData]);
+
     return (
         <div className="search-section-wrapper">
             <div className="container d-flex justify-content-center align-items-center search-bar-wrapper">
@@ -42,26 +47,33 @@ const SearchSection = () => {
                             id="textInput"
                             className="form-control"
                             value={drinkName}
-                            placeholder="Enter your favourate drink.."
+                            placeholder="Enter your favourite drink..."
                             onChange={(e) => setDrinkName(e.target.value)}
                         />
                         <div className='button-container d-flex justify-content-center align-items-center'>
                             <button type="submit" className="btn submit">
-                                <Image src={arrowIcon} alt="Example"
-                                    width={20}
-                                    height={20}
-                                />
+                                <Image src={arrowIcon} alt="Submit" width={20} height={20} />
                             </button>
                         </div>
                     </div>
                 </form>
             </div>
-            <div className='search-result-wrapper'>
-
+            <div className='container'>
+                <div className='row search-result-wrapper'>
+                    {drinksArrayData && (
+                        drinksArrayData.drinks && drinksArrayData.drinks.length > 0 ? (
+                            drinksArrayData.drinks.map((drink) => (
+                                <DrinkCard key={drink.idDrink} {...drink}></DrinkCard>
+                            ))
+                        ) : (
+                            <div className='no-result'>No drinks found for the given name!</div>
+                        )
+                    )}
+                </div>
             </div>
+            
         </div>
-    )
-
-}
+    );
+};
 
 export default SearchSection;

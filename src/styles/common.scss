@@ -90,7 +90,6 @@ body {
 
     .search-section-wrapper {
         min-height: 100vh;
-        background-color: $color1;
         .search-bar-wrapper {
             height: 100%;
             padding: 4rem 2rem;
@@ -124,6 +123,94 @@ body {
 
                 }
             }
+        }
+        background-color: $color4;
+        .card-wraapper{
+            padding: 1.2rem 1.2rem;
+            .card{
+                display: flex;
+                align-items: left;
+                border-radius: 10px;
+                padding: 2rem 2rem;
+                transition: 0.2s;
+                border: 2px solid $color4;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                &:hover{
+                    border: 2px solid $color3;
+                    transform: scale(1.01);
+                    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+                }
+                .drink{
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    color: $color2;
+                }
+                .sepetater{
+                    background-color: $color3;
+                    height: 2px;
+                    width: 100px;
+                    margin: 1rem 0px;
+                }
+                .drink-type{
+                    font-size: 1.1rem;
+                    padding-bottom: 1.2rem;
+                    color: $color1;
+                    font-weight: 600;
+                }
+                .thumb-wrapper{
+                    width: 100%;
+                    height: auto;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    margin-bottom: 1rem;
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .ingredients-title{
+                    padding-bottom: 0.5rem;
+                    font-weight: 600;
+                    color: $color2;
+                    font-size: 1rem;
+                }
+                .ingredients-list{
+                    padding-bottom: 1rem;
+                    .ingredient{
+                        background-color: $color4;
+                        color: $color2;
+                        padding: 0.1rem 0.4rem;
+                        border-radius: 5px;
+                        margin-right: 5px;
+                        margin-bottom: 5px;
+                        white-space: nowrap;
+                        display: inline-block;
+                        border: 1px solid $color2;
+                    }
+                }
+                .know-more{
+                    // height: 50px;
+                    width: 100%;
+                    // background-color: $color4;
+                    color: $color2;
+                    display: flex;
+                    font-size: 1.1arem;
+                    font-weight: 600;
+                    justify-content: left;
+                    align-items: center;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .no-result{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: $color2;
         }
     }
 }

@@ -52,7 +52,7 @@ const Header = () => {
                 </div>
             </div>
             {openModal && <Modal drinkTypeData={drinkTypeData}></Modal>}
-            {openModal && <div className='close-modal' onClick={closeModalHander}>Close Modal</div>}
+            {openModal && <div className='close-modal' onClick={closeModalHander}>Back to homepage</div>}
         </Fragment>
 
     )
