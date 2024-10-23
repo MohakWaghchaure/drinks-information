@@ -1,4 +1,5 @@
 import { Fragment, useState } from 'react';
+import InfoModal from './InfoModal';
 
 interface DrinkCardProps {
     strDrink: string;
@@ -23,6 +24,14 @@ const DrinkCard: React.FC<DrinkCardProps> = ({
     strInstructions,
     strImageSource,
 }) => {
+    const [openModal, setOpenModal] = useState(false)
+    const openModalHandler = () => {
+        setOpenModal(true);
+    }
+    const closeModalHander = ()=> {
+        setOpenModal(false);
+    }
+
     return (
         <Fragment>
             <div className='col-3 card-wraapper'>
@@ -43,9 +52,20 @@ const DrinkCard: React.FC<DrinkCardProps> = ({
                         {strIngredient4 && <div className='ingredient'>{strIngredient4}</div>}
                     </div>
                     {/* <div>{strInstructions || 'Instructions not available'}</div> */}
-                    <div className='know-more'>Know More</div>
+                    <div className='know-more' onClick={openModalHandler}>Know More</div>
                 </div>
             </div>
+            {openModal && <InfoModal
+                strDrink={strDrink}
+                strAlcoholic={strAlcoholic}
+                strDrinkThumb={strDrinkThumb? strDrinkThumb : 'null'}
+                strIngredient1={strIngredient1}
+                strIngredient2={strIngredient2}
+                strIngredient3={strIngredient3}
+                strIngredient4={strIngredient4}
+                strInstructions={strInstructions}
+            ></InfoModal>}
+            {openModal && <div className='close-modal info-modal' onClick={closeModalHander}>Back to search page</div>}
         </Fragment>
 
     )

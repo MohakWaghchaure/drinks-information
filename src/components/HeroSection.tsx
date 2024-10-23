@@ -6,8 +6,8 @@ const HeroSection = ()=>{
             <div className="top-dark-overlay"></div>
             <div className="d-flex justify-content-start align-items-center container hero-container">
                 <div className="introduction">
-                    <div className="title">Lorem Ipsum</div>
-                    <div className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                    <div className="title">Sip Your Way to Epic Flavor Adventures!</div>
+                    <div className="description">Welcome to Lord of the Drinks, where every sip tells a story! Discover a curated selection of the finest cocktails, crafted to elevate your spirits and tantalize your taste buds. Whether you’re a cocktail connoisseur or a curious newcomer, our extensive collection invites you to explore delightful concoctions from around the world. Join us on this flavorful journey and raise your glass to unforgettable experiences!</div>
                 </div>
             </div>
         </div>

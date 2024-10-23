@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import arrowIcon from '@/public/icons/right-arrow.png';
 import Image from 'next/image';
 import { Drink } from '@/types/Drink';
 import DrinkCard from './DrinkCard';
+import InfoModal from './InfoModal';
 
 interface DrinksArrayData {
     drinks: Drink[];
@@ -38,41 +39,43 @@ const SearchSection = () => {
     }, [drinksArrayData]);
 
     return (
-        <div className="search-section-wrapper">
-            <div className="container d-flex justify-content-center align-items-center search-bar-wrapper">
-                <form onSubmit={handleOnSubmit}>
-                    <div className="search-bar-container">
-                        <input
-                            type="text"
-                            id="textInput"
-                            className="form-control"
-                            value={drinkName}
-                            placeholder="Enter your favourite drink..."
-                            onChange={(e) => setDrinkName(e.target.value)}
-                        />
-                        <div className='button-container d-flex justify-content-center align-items-center'>
-                            <button type="submit" className="btn submit">
-                                <Image src={arrowIcon} alt="Submit" width={20} height={20} />
-                            </button>
+        <Fragment>
+            <div className="search-section-wrapper">
+                <div className="container d-flex justify-content-center align-items-center search-bar-wrapper">
+                    <form onSubmit={handleOnSubmit}>
+                        <div className='search-instruction'>Search cocktail by Name or Ingredient</div>
+                        <div className="search-bar-container">
+                            <input
+                                type="text"
+                                id="textInput"
+                                className="form-control"
+                                value={drinkName}
+                                placeholder="Enter your favourite drink..."
+                                onChange={(e) => setDrinkName(e.target.value)}
+                            />
+                            <div className='button-container d-flex justify-content-center align-items-center'>
+                                <button type="submit" className="btn submit">
+                                    <Image src={arrowIcon} alt="Submit" width={20} height={20} />
+                                </button>
+                            </div>
                         </div>
+                    </form>
+                </div>
+                <div className='container'>
+                    <div className='row search-result-wrapper'>
+                        {drinksArrayData && (
+                            drinksArrayData.drinks && drinksArrayData.drinks.length > 0 ? (
+                                drinksArrayData.drinks.map((drink) => (
+                                    <DrinkCard key={drink.idDrink} {...drink}></DrinkCard>
+                                ))
+                            ) : (
+                                <div className='no-result'>No drinks found for the given name!</div>
+                            )
+                        )}
                     </div>
-                </form>
-            </div>
-            <div className='container'>
-                <div className='row search-result-wrapper'>
-                    {drinksArrayData && (
-                        drinksArrayData.drinks && drinksArrayData.drinks.length > 0 ? (
-                            drinksArrayData.drinks.map((drink) => (
-                                <DrinkCard key={drink.idDrink} {...drink}></DrinkCard>
-                            ))
-                        ) : (
-                            <div className='no-result'>No drinks found for the given name!</div>
-                        )
-                    )}
                 </div>
             </div>
-            
-        </div>
+        </Fragment>
     );
 };
 
