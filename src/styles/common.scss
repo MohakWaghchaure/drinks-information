@@ -92,9 +92,11 @@ body {
 
     .search-section-wrapper {
         min-height: 100vh;
+        padding: 2rem 2rem;
         .search-bar-wrapper {
             height: 100%;
-            padding: 4rem 2rem;
+            padding: 2rem 2rem;
+            padding-bottom: 4rem;
             .search-instruction{
                 text-align: center;
                 width: 100%;
@@ -331,4 +333,18 @@ body {
 .close-modal.info-modal{
     left: 88%;
     color: $color4;
+}
+
+.footer{
+    text-align: center;
+    padding: 2rem 2rem;
+    color: $color3;
+    background-color: $color1;
+    font-size: 1rem;
+    a{
+        font-size: 1rem;
+        color: $color4;
+        font-weight: 600;
+        text-decoration: none;
+    }
 }
