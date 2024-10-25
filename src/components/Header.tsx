@@ -46,8 +46,7 @@ const Header = () => {
                     <div className="nav-option" onClick={() => { fetchHandler('vodka'); openModalHander(); }}>Vodka</div>
                     <div className="nav-option" onClick={() => { fetchHandler('beer'); openModalHander(); }}>Beer</div>
                     <div className="nav-option" onClick={() => { fetchHandler('whiskey'); openModalHander(); }}>Whiskey</div>
-                    <div className="nav-option" onClick={() => { fetchHandler('tea'); openModalHander(); }}>Tea</div>
-                    <div className="nav-option" onClick={() => { fetchHandler('coffee'); openModalHander(); }}>Coffee</div>
+                    <div className="nav-option" onClick={() => { fetchHandler('rum'); openModalHander(); }}>Rum</div>
                 </div>
             </div>
             {openModal && <Modal drinkTypeData={drinkTypeData}></Modal>}

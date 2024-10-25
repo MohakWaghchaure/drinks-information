@@ -2,6 +2,7 @@ $color1: #27374D;
 $color2: #526D82;
 $color3: #9DB2BF;
 $color4: #DDE6ED;
+$color5: #000000;
 
 body {
     margin: 0px;
@@ -93,8 +94,21 @@ body {
     .search-section-wrapper {
         min-height: 100vh;
         padding: 2rem 2rem;
-        background-color: $color3;
+        position: relative;
+        background: radial-gradient(circle, rgba(157,178,191,1) 50%, rgba(82,109,130,1) 100%);
+        .search-background{
+            background-image: url('../public/images/background005.svg');
+            filter: grayscale(1);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+            opacity: 0.2;
+            z-index: 0;
+        }
         .search-bar-wrapper {
+            z-index: 10;
             height: 100%;
             padding: 2rem 2rem;
             padding-bottom: 4rem;
@@ -102,7 +116,9 @@ body {
                 text-align: center;
                 width: 100%;
                 padding: 1rem 2rem;
-                font-size: 1.4rem;
+                font-size: 1.2rem;
+                color: $color1;
+                font-weight: 600;
             }
             .search-bar-container {
                 min-width: 700px;
@@ -136,6 +152,7 @@ body {
             
         }
         .search-result-wrapper{
+            z-index: 10;
             .no-result{
                 width: 100%;
                 display: flex;
@@ -143,7 +160,7 @@ body {
                 justify-content: center;
                 font-size: 1.5rem;
                 font-weight: 600;
-                color: $color2;
+                color: $color1;
             }
             .suggestions{
                 width: 100%;
@@ -152,7 +169,7 @@ body {
                 justify-content: center;
                 font-size: 1.1rem;
                 font-weight: 600;
-                color: $color1;
+                color: #000000;
                 padding: 1rem 1rem;
             }
         }
