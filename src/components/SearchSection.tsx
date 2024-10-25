@@ -12,6 +12,8 @@ interface DrinksArrayData {
 const SearchSection = () => {
     const [drinkName, setDrinkName] = useState<string>('');
     const [drinksArrayData, setDrinksArrayData] = useState<DrinksArrayData | null>(null);
+    const [drinksSuggestionsData, setDrinksSuggestionsData] = useState<DrinksArrayData | null>(null);
+     const [drinksFetchHander, setDrinksFetchHander] = useState(false);
 
     const fetchHandler = async (drinkName: string) => {
         try {
@@ -25,6 +27,18 @@ const SearchSection = () => {
         }
     };
 
+    const fetchSuggestionsHandler = async (drinkName: string) => {
+        try {
+            const res = await fetch(
+                `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkName}`
+            );
+            const data: DrinksArrayData = await res.json();
+            setDrinksSuggestionsData(data);
+        } catch (error) {
+            console.error('Error fetching drink data:', error);
+        }
+    };
+
     const handleOnSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (drinkName.trim()) {
@@ -33,9 +47,12 @@ const SearchSection = () => {
     };
 
     useEffect(() => {
-        if (drinksArrayData != null) {
-            console.log(drinksArrayData, 'drinksArrayData');
+        if (drinksArrayData) {
+            if (drinksArrayData.drinks !== null) {
+                console.log(drinksArrayData, 'drinksArrayData');
+            }
         }
+        fetchSuggestionsHandler('shot');
     }, [drinksArrayData]);
 
     return (
@@ -70,6 +87,14 @@ const SearchSection = () => {
                                 ))
                             ) : (
                                 <div className='no-result'>No drinks found for the given name!</div>
+                            )
+                        )}
+                        <div className='suggestions'>You May Like These Suggestions</div>
+                        {drinksSuggestionsData && (
+                            drinksSuggestionsData.drinks && drinksSuggestionsData.drinks.length > 0 && (
+                                drinksSuggestionsData.drinks.map((drink) => (
+                                    <DrinkCard key={drink.idDrink} {...drink}></DrinkCard>
+                                ))
                             )
                         )}
                     </div>

@@ -93,6 +93,7 @@ body {
     .search-section-wrapper {
         min-height: 100vh;
         padding: 2rem 2rem;
+        background-color: $color3;
         .search-bar-wrapper {
             height: 100%;
             padding: 2rem 2rem;
@@ -132,8 +133,29 @@ body {
 
                 }
             }
+            
         }
-        background-color: $color3;
+        .search-result-wrapper{
+            .no-result{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: $color2;
+            }
+            .suggestions{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: $color1;
+                padding: 1rem 1rem;
+            }
+        }
         .card-wraapper{
             padding: 1.2rem 1.2rem;
             .card{
@@ -212,15 +234,6 @@ body {
                     cursor: pointer;
                 }
             }
-        }
-        .no-result{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: $color2;
         }
     }
 }
