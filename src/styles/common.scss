@@ -28,6 +28,17 @@ body {
 
         .logo {
             font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            .drinks-icon{
+                background-image: url('../public/icons/cheers.png');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 40px;
+                width: 40px;
+            }
         }
 
         .nav-menu {

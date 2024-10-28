@@ -39,7 +39,7 @@ const Header = () => {
     return (
         <Fragment>
             <div className="d-flex justify-content-between align-items-center header-wrapper">
-                <div className="logo">Lord of the Drinks!</div>
+                <div className="logo"><div className="drinks-icon"></div><div className="px-2">Lord of the Drinks!</div></div>
                 <div className="d-flex nav-menu">
                     <div className="nav-option" onClick={() => { fetchHandler('vodka'); openModalHander(); }}>Vodka</div>
                     <div className="nav-option" onClick={() => { fetchHandler('beer'); openModalHander(); }}>Beer</div>
