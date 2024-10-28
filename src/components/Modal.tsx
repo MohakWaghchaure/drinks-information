@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 
 interface DrinkTypeData {
     idIngredient: string;

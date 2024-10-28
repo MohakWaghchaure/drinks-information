@@ -1,4 +1,5 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
+import Image from 'next/image';
 
 interface drinkCardDataProps {
     strDrink: string;
@@ -9,7 +10,6 @@ interface drinkCardDataProps {
     strIngredient3?: string;
     strIngredient4?: string;
     strInstructions?: string;
-    strImageSource?: string;
 }
 
 const InfoModal: React.FC<drinkCardDataProps> = ({
@@ -20,8 +20,7 @@ const InfoModal: React.FC<drinkCardDataProps> = ({
     strIngredient2,
     strIngredient3,
     strIngredient4,
-    strInstructions,
-    strImageSource, }) => {
+    strInstructions, }) => {
     return (
         <Fragment>
             <div className="modal-wrapper">
@@ -42,9 +41,9 @@ const InfoModal: React.FC<drinkCardDataProps> = ({
                                 <div className='direction'>{strInstructions && strInstructions}</div>
                             </div>
                             <div className=''>
-                                {strDrinkThumb != 'null' && (
+                                {strDrinkThumb && (
                                     <div className='thumb-wrapper'>
-                                        <img src={strDrinkThumb} alt={strDrink} />
+                                        <Image src={strDrinkThumb} alt={strDrink} />
                                     </div>
                                 )}
                                 

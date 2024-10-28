@@ -3,7 +3,6 @@ import arrowIcon from '@/public/icons/right-arrow.png';
 import Image from 'next/image';
 import { Drink } from '@/types/Drink';
 import DrinkCard from './DrinkCard';
-import InfoModal from './InfoModal';
 
 interface DrinksArrayData {
     drinks: Drink[];
@@ -13,7 +12,6 @@ const SearchSection = () => {
     const [drinkName, setDrinkName] = useState<string>('');
     const [drinksArrayData, setDrinksArrayData] = useState<DrinksArrayData | null>(null);
     const [drinksSuggestionsData, setDrinksSuggestionsData] = useState<DrinksArrayData | null>(null);
-     const [drinksFetchHander, setDrinksFetchHander] = useState(false);
 
     const fetchHandler = async (drinkName: string) => {
         try {

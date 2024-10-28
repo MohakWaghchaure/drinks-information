@@ -1,5 +1,5 @@
 'use client';
-import react, { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Modal from "./Modal";
 
 interface DrinkTypeData {
@@ -21,7 +21,7 @@ const Header = () => {
     const openModalHander = () => {
         setOpenModal(true);
     }
-    const fetchHandler = async (drinkType: String | null) => {
+    const fetchHandler = async (drinkType: string | null) => {
         try {
             const res = await fetch(
                 `https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${drinkType}`

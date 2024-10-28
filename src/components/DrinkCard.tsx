@@ -1,5 +1,6 @@
 import { Fragment, useState } from 'react';
 import InfoModal from './InfoModal';
+import Image from 'next/image';
 
 interface DrinkCardProps {
     strDrink: string;
@@ -10,7 +11,6 @@ interface DrinkCardProps {
     strIngredient3?: string;
     strIngredient4?: string;
     strInstructions?: string;
-    strImageSource?: string;
 }
 
 const DrinkCard: React.FC<DrinkCardProps> = ({
@@ -22,7 +22,6 @@ const DrinkCard: React.FC<DrinkCardProps> = ({
     strIngredient3,
     strIngredient4,
     strInstructions,
-    strImageSource,
 }) => {
     const [openModal, setOpenModal] = useState(false)
     const openModalHandler = () => {
@@ -41,7 +40,7 @@ const DrinkCard: React.FC<DrinkCardProps> = ({
                     <div className='drink-type'>Type: {strAlcoholic || 'Alcoholic status not available'}</div>
                     {strDrinkThumb && (
                         <div className='thumb-wrapper'>
-                            <img src={strDrinkThumb} alt={strDrink} />
+                            <Image src={strDrinkThumb} alt={strDrink} />
                         </div>
                     )}
                     <div className='ingredients-title'>Ingredients:</div>
