@@ -15,9 +15,7 @@ const SearchSection = () => {
 
     const fetchHandler = async (drinkName: string) => {
         try {
-            const res = await fetch(
-                `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkName}`
-            );
+            const res = await fetch(`/api/search?drinkName=${drinkName}`);
             const data: DrinksArrayData = await res.json();
             setDrinksArrayData(data);
         } catch (error) {
@@ -27,9 +25,7 @@ const SearchSection = () => {
 
     const fetchSuggestionsHandler = async (drinkName: string) => {
         try {
-            const res = await fetch(
-                `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkName}`
-            );
+            const res = await fetch(`/api/suggestions?drinkName=${drinkName}`);
             const data: DrinksArrayData = await res.json();
             setDrinksSuggestionsData(data);
         } catch (error) {

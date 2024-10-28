@@ -23,9 +23,7 @@ const Header = () => {
     }
     const fetchHandler = async (drinkType: string | null) => {
         try {
-            const res = await fetch(
-                `https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${drinkType}`
-            );
+            const res = await fetch(`/api/info?drinkType=${drinkType}`);
             const data = await res.json();
             setDrinkTypeData(data.ingredients[0]);
         } catch (error) {

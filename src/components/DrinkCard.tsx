@@ -1,6 +1,5 @@
 import { Fragment, useState } from 'react';
 import InfoModal from './InfoModal';
-import Image from 'next/image';
 
 interface DrinkCardProps {
     strDrink: string;
@@ -40,7 +39,7 @@ const DrinkCard: React.FC<DrinkCardProps> = ({
                     <div className='drink-type'>Type: {strAlcoholic || 'Alcoholic status not available'}</div>
                     {strDrinkThumb && (
                         <div className='thumb-wrapper'>
-                            <Image src={strDrinkThumb} alt={strDrink} />
+                            <img src={strDrinkThumb} alt={strDrink} />
                         </div>
                     )}
                     <div className='ingredients-title'>Ingredients:</div>
