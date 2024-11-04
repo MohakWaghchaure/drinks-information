@@ -204,7 +204,7 @@ body {
                 width: 100%;
                 padding: 1rem 2rem;
                 font-size: 1.2rem;
-                color: $color1;
+                color: $color5;
                 font-weight: 600;
             }
 
@@ -303,6 +303,9 @@ body {
                     font-size: 1.5rem;
                     font-weight: 600;
                     color: $color2;
+                    @media screen and (max-width: 768px) {
+                        font-size: 1.2rem;
+                    }
                 }
 
                 .sepetater {
@@ -317,6 +320,9 @@ body {
                     padding-bottom: 1.2rem;
                     color: $color1;
                     font-weight: 600;
+                    @media screen and (max-width: 768px) {
+                        font-size: 1rem;
+                    }
                 }
 
                 .thumb-wrapper {
@@ -341,6 +347,9 @@ body {
                     font-weight: 600;
                     color: $color2;
                     font-size: 1rem;
+                    @media screen and (max-width: 768px) {
+                        font-size: 1rem;
+                    }
                 }
 
                 .ingredients-list {
@@ -356,6 +365,9 @@ body {
                         white-space: nowrap;
                         display: inline-block;
                         border: 1px solid $color3;
+                        @media screen and (max-width: 768px) {
+                            font-size: 0.9rem;
+                        }
                     }
                 }
 
@@ -365,12 +377,15 @@ body {
                     // background-color: $color4;
                     color: $color2;
                     display: flex;
-                    font-size: 1.1arem;
+                    font-size: 1.1rem;
                     font-weight: 600;
                     justify-content: left;
                     align-items: center;
                     border-radius: 5px;
                     cursor: pointer;
+                    @media screen and (max-width: 768px) {
+                        font-size: 1rem;
+                    }
                 }
             }
         }
