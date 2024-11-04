@@ -15,14 +15,6 @@ body {
     color: $color4;
 }
 
-@media screen and (max-width: 120px) {}
-
-@media screen and (max-width: 992px) {}
-
-@media screen and (max-width: 768px) {}
-
-@media screen and (max-width: 576px) {}
-
 .page-wrapper {
     .header-wrapper {
         padding: 20px;
@@ -420,10 +412,16 @@ body {
             .title {
                 font-size: 3.5rem;
                 font-weight: 600;
+                @media screen and (max-width: 768px) {
+                    font-size: 2.5rem;
+                }
             }
 
             p {
                 font-size: 1.2rem;
+                @media screen and (max-width: 768px) {
+                    font-size: 1rem;
+                }
             }
 
             .seperate {
@@ -451,6 +449,9 @@ body {
             font-weight: 600;
             color: $color4;
             padding-bottom: 0.5rem;
+            @media screen and (max-width: 768px) {
+                font-size: 1.4rem;
+            }
         }
 
         .sepetater {
@@ -466,6 +467,9 @@ body {
             color: $color2;
             font-weight: 600;
             padding-bottom: 1.2rem;
+            @media screen and (max-width: 768px) {
+                font-size: 1rem;
+            }
         }
 
         .ingredients-title {
@@ -474,6 +478,9 @@ body {
             color: $color3;
             font-size: 1rem;
             padding-bottom: 1.2rem;
+            @media screen and (max-width: 768px) {
+                font-size: 1rem;
+            }
         }
 
         .ingredients-list {
@@ -489,6 +496,9 @@ body {
                 white-space: nowrap;
                 display: inline-block;
                 border: 1px solid $color3;
+                @media screen and (max-width: 768px) {
+                    font-size: 0.9rem;
+                }
             }
         }
 
@@ -503,7 +513,7 @@ body {
             height: 100%;
             overflow: hidden;
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 992px) {
                 display: none;
             }
 
@@ -523,11 +533,13 @@ body {
     color: $color3;
     cursor: pointer;
     z-index: 10000;
+    width: auto;
 }
 
 .close-modal.info-modal {
-    left: 88%;
+    right: 0%;
     color: $color4;
+    max-width: fit-content;
 }
 
 .footer {
