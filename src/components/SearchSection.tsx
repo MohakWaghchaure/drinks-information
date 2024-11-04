@@ -43,7 +43,7 @@ const SearchSection = () => {
     useEffect(() => {
         if (drinksArrayData) {
             if (drinksArrayData.drinks !== null) {
-                console.log(drinksArrayData, 'drinksArrayData');
+                // console.log(drinksArrayData, 'drinksArrayData');
             }
         }
         fetchSuggestionsHandler('shot');

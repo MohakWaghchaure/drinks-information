@@ -33,7 +33,7 @@ const Header = () => {
 
     useEffect(()=>{
         if(drinkTypeData != null){
-            console.log(drinkTypeData);
+            // console.log(drinkTypeData);
         }
     },[drinkTypeData])
     return (
