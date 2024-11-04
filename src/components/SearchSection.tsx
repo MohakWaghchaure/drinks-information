@@ -67,7 +67,7 @@ const SearchSection = () => {
                             />
                             <div className='button-container d-flex justify-content-center align-items-center'>
                                 <button type="submit" className="btn submit">
-                                    <Image src={arrowIcon} alt="Submit" width={20} height={20} />
+                                    <Image src={arrowIcon} alt="Submit" width={25} height={25} />
                                 </button>
                             </div>
                         </div>
