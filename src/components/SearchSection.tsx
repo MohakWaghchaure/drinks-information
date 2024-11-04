@@ -53,7 +53,7 @@ const SearchSection = () => {
         <Fragment>
             <div id='search-section' className="search-section-wrapper">
                 <div className='search-background'></div>
-                <div className="container d-flex justify-content-center align-items-center search-bar-wrapper">
+                <div className="container search-bar-wrapper">
                     <form onSubmit={handleOnSubmit}>
                         <div className='search-instruction'>Search cocktail by Name or Ingredient</div>
                         <div className="search-bar-container">

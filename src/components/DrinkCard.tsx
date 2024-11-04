@@ -32,7 +32,7 @@ const DrinkCard: React.FC<DrinkCardProps> = ({
 
     return (
         <Fragment>
-            <div className='col-3 card-wraapper'>
+            <div className='col-lg-3 col-md-6 col-sm-6 col-xs-12 card-wraapper'>
                 <div className='card'>
                     <div className='drink'>{strDrink || 'Drink name not available'}</div>
                     <div className='sepetater'></div>

@@ -12,21 +12,16 @@ body {
     font-family: "Poppins", sans-serif;
     font-size: 16.5%;
     box-sizing: border-box;
-    color: $color4;    
+    color: $color4;
 }
 
-@media screen and (max-width: 120px) {
-    
-}
-@media screen and (max-width: 992px) {
-    
-}
-@media screen and (max-width: 768px) {
-    
-}
-@media screen and (max-width: 576px) {
-    
-}
+@media screen and (max-width: 120px) {}
+
+@media screen and (max-width: 992px) {}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 576px) {}
 
 .page-wrapper {
     .header-wrapper {
@@ -41,29 +36,43 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         @media screen and (max-width: 768px) {
             justify-content: center;
         }
+
         .logo {
             font-size: 1.8rem;
             display: flex;
             align-items: center;
             justify-content: start;
-            .drinks-icon{
+
+            @media screen and (max-width: 768px) {
+                font-size: 1.4rem;
+            }
+
+            .drinks-icon {
                 background-image: url('../public/icons/cheers.png');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: contain;
                 height: 40px;
                 width: 40px;
+
+                @media screen and (max-width: 768px) {
+                    height: 25px;
+                    width: 25px;
+                }
             }
         }
 
         .nav-menu {
             display: flex;
+
             @media screen and (max-width: 768px) {
                 display: none;
             }
+
             .nav-option {
                 cursor: pointer;
                 font-size: 1.1rem;
@@ -87,6 +96,12 @@ body {
         width: 100%;
         position: relative;
 
+        @media screen and (max-width: 768px) {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            min-height: auto;
+        }
+
         .top-dark-overlay {
             position: absolute;
             height: 350px;
@@ -97,6 +112,16 @@ body {
 
         .hero-container {
             min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+
+            @media screen and (max-width: 768px) {
+                align-items: start;
+                justify-content: center;
+                min-height: auto;
+            }
+
             .introduction {
                 font-size: 1.2rem;
                 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -108,16 +133,29 @@ body {
                 position: relative;
                 background: linear-gradient(0deg, rgba(24, 28, 20, 1) 0%, rgba(0, 0, 0, 0.5019257703081232) 100%);
 
+                @media screen and (max-width: 768px) {
+                    padding: 1.5rem 1.5rem;
+                    text-align: center;
+                }
+
                 .title {
                     font-size: 2rem;
                     font-weight: 600;
                     padding-bottom: 1rem;
+
+                    @media screen and (max-width: 768px) {
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                    }
                 }
 
                 .description {
                     font-size: 1.1rem;
-                    // font-weight: 500;
                     padding-bottom: 1rem;
+
+                    @media screen and (max-width: 768px) {
+                        font-size: 1rem;
+                    }
                 }
             }
         }
@@ -128,8 +166,14 @@ body {
         min-height: 100vh;
         padding: 2rem 2rem;
         position: relative;
-        background: radial-gradient(circle, rgba(157,178,191,1) 50%, rgba(82,109,130,1) 100%);
-        .search-background{
+        background: radial-gradient(circle, rgba(157, 178, 191, 1) 50%, rgba(82, 109, 130, 1) 100%);
+
+        @media screen and (max-width: 768px) {
+            padding: 0.5rem 0.5rem;
+            padding-bottom: 2rem;
+        }
+
+        .search-background {
             background-image: url('../public/images/background005.svg');
             filter: grayscale(1);
             position: absolute;
@@ -140,12 +184,22 @@ body {
             opacity: 0.2;
             z-index: 0;
         }
+
         .search-bar-wrapper {
             z-index: 10;
             height: 100%;
             padding: 2rem 2rem;
             padding-bottom: 4rem;
-            .search-instruction{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media screen and (max-width: 768px) {
+                padding: 0rem;
+                padding-bottom: 2rem;
+            }
+
+            .search-instruction {
                 text-align: center;
                 width: 100%;
                 padding: 1rem 2rem;
@@ -153,10 +207,15 @@ body {
                 color: $color1;
                 font-weight: 600;
             }
+
             .search-bar-container {
                 min-width: 700px;
                 height: 65px;
                 position: relative;
+
+                @media screen and (max-width: 768px) {
+                    min-width: auto;
+                }
 
                 input {
                     height: 100%;
@@ -170,23 +229,27 @@ body {
                     width: auto;
                     top: 0%;
                     right: 0%;
+
                     .submit {
                         padding: 1rem 1.2rem;
                         outline: none;
                         border: none;
                         transition: 0.2s;
-                        &:hover{
+
+                        &:hover {
                             transform: translateX(4px);
                         }
                     }
 
                 }
             }
-            
+
         }
-        .search-result-wrapper{
+
+        .search-result-wrapper {
             z-index: 10;
-            .no-result{
+
+            .no-result {
                 width: 100%;
                 display: flex;
                 align-items: center;
@@ -195,7 +258,8 @@ body {
                 font-weight: 600;
                 color: $color1;
             }
-            .suggestions{
+
+            .suggestions {
                 width: 100%;
                 display: flex;
                 align-items: center;
@@ -206,9 +270,16 @@ body {
                 padding: 1rem 1rem;
             }
         }
-        .card-wraapper{
+
+        .card-wraapper {
             padding: 1.2rem 1.2rem;
-            .card{
+
+            @media screen and (max-width: 768px) {
+                padding: 0.5rem 0.5rem;
+                padding-bottom: 1rem;
+            }
+
+            .card {
                 display: flex;
                 align-items: left;
                 border-radius: 10px;
@@ -217,48 +288,65 @@ body {
                 background-color: $color4;
                 border: 2px solid $color4;
                 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                &:hover{
+
+                @media screen and (max-width: 768px) {
+                    padding: 1rem 1rem;
+                }
+
+                &:hover {
                     border: 2px solid $color3;
                     transform: scale(1.01);
                     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
                 }
-                .drink{
+
+                .drink {
                     font-size: 1.5rem;
                     font-weight: 600;
                     color: $color2;
                 }
-                .sepetater{
+
+                .sepetater {
                     background-color: $color3;
                     height: 2px;
                     width: 100px;
                     margin: 1rem 0px;
                 }
-                .drink-type{
+
+                .drink-type {
                     font-size: 1.1rem;
                     padding-bottom: 1.2rem;
                     color: $color1;
                     font-weight: 600;
                 }
-                .thumb-wrapper{
+
+                .thumb-wrapper {
                     width: 100%;
                     height: auto;
                     overflow: hidden;
                     border-radius: 10px;
                     margin-bottom: 1rem;
-                    img{
+
+                    @media screen and (max-width: 768px) {
+                        height: auto;
+                    }
+
+                    img {
                         width: 100%;
                         height: auto;
                     }
                 }
-                .ingredients-title{
+
+                .ingredients-title {
                     padding-bottom: 0.5rem;
                     font-weight: 600;
                     color: $color2;
                     font-size: 1rem;
                 }
-                .ingredients-list{
+
+                .ingredients-list {
                     padding-bottom: 1rem;
-                    .ingredient{
+
+                    .ingredient {
                         background-color: $color2;
                         color: $color4;
                         padding: 0.1rem 0.4rem;
@@ -270,7 +358,8 @@ body {
                         border: 1px solid $color3;
                     }
                 }
-                .know-more{
+
+                .know-more {
                     // height: 50px;
                     width: 100%;
                     // background-color: $color4;
@@ -288,7 +377,7 @@ body {
     }
 }
 
-.modal-wrapper{
+.modal-wrapper {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -298,8 +387,9 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 100;
-    background: linear-gradient(0deg, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.8) 100%);
-    .modal-container{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.8) 100%);
+
+    .modal-container {
         height: 85%;
         width: 85%;
         display: block;
@@ -308,16 +398,20 @@ body {
         border: 2px solid $color3;
         overflow: auto;
         padding: 1.5rem 2.5rem;
-        .drink-data{
+
+        .drink-data {
             color: $color4;
-            .title{
+
+            .title {
                 font-size: 3.5rem;
                 font-weight: 600;
             }
-            p{
+
+            p {
                 font-size: 1.2rem;
             }
-            .seperate{
+
+            .seperate {
                 background-color: $color4;
                 height: 2px;
                 width: 100px;
@@ -325,38 +419,52 @@ body {
             }
         }
     }
-    .modal-container.drink-description-modal{
+
+    .modal-container.drink-description-modal {
         padding: 0rem;
-        .drink{
+
+        .drink-description-wrapper {
+            padding: 2rem 2rem;
+
+            @media screen and (max-width: 768px) {
+                padding: 1rem 1rem;
+            }
+        }
+
+        .drink {
             font-size: 1.8rem;
             font-weight: 600;
             color: $color4;
             padding-bottom: 0.5rem;
         }
-        .sepetater{
+
+        .sepetater {
             background-color: $color3;
             height: 2px;
             width: 100px;
             margin: 1rem 0px;
         }
-        .drink-type{
+
+        .drink-type {
             font-size: 1.1rem;
             padding-bottom: 1.2rem;
             color: $color2;
             font-weight: 600;
             padding-bottom: 1.2rem;
         }
-        
-        .ingredients-title{
+
+        .ingredients-title {
             padding-bottom: 0.5rem;
             font-weight: 600;
             color: $color3;
             font-size: 1rem;
             padding-bottom: 1.2rem;
         }
-        .ingredients-list{
+
+        .ingredients-list {
             padding-bottom: 1.8rem;
-            .ingredient{
+
+            .ingredient {
                 background-color: $color2;
                 color: $color4;
                 padding: 0.1rem 0.4rem;
@@ -368,16 +476,23 @@ body {
                 border: 1px solid $color3;
             }
         }
-        .direction{
+
+        .direction {
             color: $color4;
             font-size: 1rem;
             // max-width: 50%;
         }
-        .thumb-wrapper{
+
+        .thumb-wrapper {
             width: 100%;
             height: 100%;
             overflow: hidden;
-            img{
+
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
+
+            img {
                 width: auto;
                 height: 100%;
             }
@@ -385,7 +500,8 @@ body {
     }
 
 }
-.close-modal{
+
+.close-modal {
     position: fixed;
     top: 10px;
     right: 10px;
@@ -393,18 +509,20 @@ body {
     cursor: pointer;
     z-index: 10000;
 }
-.close-modal.info-modal{
+
+.close-modal.info-modal {
     left: 88%;
     color: $color4;
 }
 
-.footer{
+.footer {
     text-align: center;
     padding: 2rem 2rem;
     color: $color3;
     background-color: $color1;
     font-size: 1rem;
-    a{
+
+    a {
         font-size: 1rem;
         color: $color4;
         font-weight: 600;

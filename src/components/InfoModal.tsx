@@ -26,7 +26,7 @@ const InfoModal: React.FC<drinkCardDataProps> = ({
                 <div className="modal-container drink-description-modal">
                     {strDrink && (
                         <div className='d-flex justify-content-between h-100'>
-                            <div className='p-5'>
+                            <div className='drink-description-wrapper'>
                                 <div className='drink'>{strDrink || 'Drink name not available'}</div>
                                 <div className='sepetater'></div>
                                 <div className='drink-type'>Type: {strAlcoholic || 'Alcoholic status not available'}</div>
