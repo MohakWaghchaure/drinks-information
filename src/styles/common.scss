@@ -372,10 +372,11 @@ body {
                     align-items: center;
                     justify-content: left;
                     width: auto;
+                    cursor: pointer;
                     &:hover{
                         .know-icon {
                             transform: translate(5px);
-                            transition: 0.1s;
+                            transition: 0.2s;
                         }
                     }
                     .text {
@@ -384,7 +385,6 @@ body {
                         font-size: 1.1rem;
                         font-weight: 600;
                         border-radius: 5px;
-                        cursor: pointer;
                         padding-right: 0.2rem;
 
                         @media screen and (max-width: 768px) {
