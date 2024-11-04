@@ -50,7 +50,7 @@ const DrinkCard: React.FC<DrinkCardProps> = ({
                         {strIngredient4 && <div className='ingredient'>{strIngredient4}</div>}
                     </div>
                     {/* <div>{strInstructions || 'Instructions not available'}</div> */}
-                    <div className='know-more' onClick={openModalHandler}>Know More</div>
+                    <div className='know-more' onClick={openModalHandler}><div className='text'>Know More</div><div className='know-icon'></div></div>
                 </div>
             </div>
             {openModal && <InfoModal
